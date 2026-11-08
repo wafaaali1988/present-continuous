@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Present Continuous</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap">
+<style>
+html,body{margin:0;background:#EFE9DA}
+body{padding:14px 10px 30px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.pg{position:relative;max-width:460px;margin:0 auto;background-color:#FFFEF7;background-image:repeating-linear-gradient(to bottom,transparent 0 31px,#C5DCF2 31px 32px);border:1px solid #CFCFCF;border-radius:6px;padding:12px 34px 20px 14px;font-family:'Caveat',cursive;color:#1F2A44;font-size:22px;line-height:32px;overflow:hidden;box-sizing:border-box}
+.pg:after{content:"";position:absolute;top:0;bottom:0;right:24px;width:1.5px;background:#E57373}
+.en{font-size:38px;line-height:50px;font-weight:700;color:#1D5FB8;text-align:center}
+.sub{font-size:19px;line-height:30px;color:#4A5568;text-align:center}
+.rowr{margin:16px 0 6px}
+.rib{display:inline-block;color:#fff;padding:0 22px;font-size:20px;line-height:34px;clip-path:polygon(0 0,100% 0,94% 50%,100% 100%,0 100%,6% 50%)}
+button{font-family:inherit;color:#1F2A44;cursor:pointer}
+.chip{font-size:22px;line-height:34px;padding:0 13px;margin:3px 2px;border:2.5px solid #1F2A44;background:#fff;border-radius:14px 8px 16px 8px}
+.chip.on{background:#FFE58A;transform:rotate(-3deg)}
+.mode{font-size:20px;line-height:36px;padding:0 14px;margin:3px 3px;border:3px solid;border-radius:18px 8px 18px 8px;background:#fff}
+.bub{position:relative;background:#fff;border:3px solid #1F2A44;border-radius:22px 22px 22px 6px;padding:8px 12px;margin:12px 4px 14px;font-size:30px;line-height:38px;text-align:center;font-weight:500}
+.bub:after{content:"";position:absolute;bottom:-11px;left:44px;width:16px;height:16px;background:#fff;border-right:3px solid #1F2A44;border-bottom:3px solid #1F2A44;transform:rotate(45deg)}
+.bub b{color:#D32F2F;font-weight:700;display:inline-block}
+.pp{animation:pop .45s both}
+.note{font-size:19px;line-height:28px;color:#5C4400;text-align:center;min-height:30px;margin-top:2px}
+#sc{display:block;width:100%;height:auto;overflow:visible}
+.ch{cursor:pointer}
+.bob{transform-box:fill-box;transform-origin:bottom center;animation:bob 2.2s ease-in-out infinite}
+.jump{animation:jump .6s ease-out!important}
+.eyes,.ball,.tail,.qm{transform-box:fill-box;transform-origin:center}
+.eyes{animation:blink 4s infinite}
+.tail{transform-origin:left bottom;animation:wag 1.4s ease-in-out infinite}
+.ball{animation:bounce 1s ease-in-out infinite}
+.qm{animation:float 1.6s ease-in-out infinite}
+.m-s,.m-n,.m-q,.x,.qm{display:none}
+svg.pos .m-s,svg.neg .m-n,svg.q .m-q{display:block}
+svg.neg .x,svg.q .qm{display:block}
+svg.neg .bob{animation:shake 1.2s ease-in-out infinite}
+.qz{background:#fff;border:3px solid #1F2A44;border-radius:20px 10px 22px 12px;padding:10px 14px 12px}
+.qt{font-size:28px;line-height:36px;font-weight:700;margin:4px 0 6px}
+.bl{display:inline-block;min-width:70px;border-bottom:3px solid #1F2A44;text-align:center;color:#2E9E57}
+.opt{display:block;width:100%;margin:8px 0;min-height:46px;font-size:25px;font-weight:500;border:3px solid #1F2A44;background:#FFFEF7;border-radius:16px 8px 18px 10px}
+.opt.ok{background:#C8F0D2;border-color:#2E9E57}
+.opt.bad{background:#FFD0D0;border-color:#D34848;animation:shake .4s}
+.fb{display:flex;align-items:center;gap:10px;min-height:48px;font-size:19px;line-height:26px;margin-top:4px;animation:pop .4s both}
+.nx{display:block;margin:10px auto 2px;font-size:22px;line-height:38px;padding:0 26px;border:3px solid #4A7BD9;background:#E8F0FE;border-radius:18px 8px 18px 8px;font-family:'Caveat',cursive;font-weight:700}
+.dots{display:flex;gap:6px;justify-content:center;direction:ltr}
+.dots i{width:14px;height:14px;border-radius:50%;border:2.5px solid #1F2A44;background:#fff}
+.dots i.d{background:#4CAF6A}.dots i.w{background:#E25555}.dots i.c{background:#FFE58A}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes bob{50%{transform:translateY(-4px)}}
+@keyframes jump{0%{transform:translateY(0)}40%{transform:translateY(-34px) rotate(-4deg)}100%{transform:translateY(0)}}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+@keyframes wag{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(14deg)}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+@keyframes float{50%{transform:translateY(-8px) rotate(6deg)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@keyframes star{0%{transform:scale(0) rotate(-40deg)}70%{transform:scale(1.3)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+.legL,.legR{transform-box:fill-box;transform-origin:top center}
+svg.walk.pos .legL{animation:swing .6s ease-in-out infinite alternate}
+svg.walk.pos .legR{animation:swing .6s ease-in-out infinite alternate-reverse}
+svg.neg .ball{animation:none}
+.off{display:none}
+svg.neg .off{display:block}
+svg.neg .scr{display:none}
+.flag{transform-box:fill-box;transform-origin:left center;animation:wave 1.2s ease-in-out infinite}
+.cy{animation:cyc 2s linear infinite}
+.tvb{transform-box:fill-box;transform-origin:center;animation:bounce .8s ease-in-out infinite}
+.cap{text-align:center;font-size:22px;line-height:28px;color:#1D5FB8;font-weight:700;margin-top:2px}
+@keyframes swing{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}
+@keyframes wave{50%{transform:skewY(10deg) scaleX(.9)}}
+@keyframes cyc{0%,100%{fill:#FF6B6B}33%{fill:#FFD54F}66%{fill:#4ECDC4}}
+.swr,.jig,.cover,.cld,.spn,.wv,.nd{transform-box:view-box}
+svg.pos .swr{animation:rswing .5s ease-in-out infinite alternate}
+svg.pos .jig{animation:jig .35s ease-in-out infinite alternate}
+.cover{transform-box:fill-box;transform-origin:right center;animation:uncover 3.2s steps(8) infinite}
+svg.neg .cover{animation:none;transform:scaleX(1)}
+.cld{animation:drift 7s ease-in-out infinite alternate}
+.spn{transform-box:fill-box;transform-origin:center;animation:spin 9s linear infinite}
+.wv{animation:wavex 1.6s linear infinite}
+.nd{animation:pulse 1s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+svg.run.pos .legL{animation:swing .3s ease-in-out infinite alternate}
+svg.run.pos .legR{animation:swing .3s ease-in-out infinite alternate-reverse}
+svg.run.pos .bob{animation-duration:.45s}
+@keyframes rswing{from{transform:rotate(-10deg)}to{transform:rotate(-70deg)}}
+@keyframes jig{from{transform:rotate(-8deg)}to{transform:rotate(10deg)}}
+@keyframes uncover{0%{transform:scaleX(1)}80%,100%{transform:scaleX(0)}}
+@keyframes drift{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes wavex{from{transform:translateX(0)}to{transform:translateX(-40px)}}
+</style>
+</head>
+<body>
+<h2 class="sr">Interactive Present Continuous lesson: choose the subject, the form and the verb to change the sentence and the character, then take a short quiz</h2>
+<div class="pg">
+<div class="en">Present Continuous</div>
+<div class="sub">It is happening right now! Tap the buttons and watch the picture change.</div>
+
+<div class="rowr"><span class="rib" style="background:#5C6BC0">1. Choose the subject</span></div>
+<div id="subs"></div>
+<div class="rowr"><span class="rib" style="background:#F59E0B">2. Choose the form</span></div>
+<div id="modes"></div>
+<div class="rowr"><span class="rib" style="background:#4CAF6A">3. Choose the verb</span></div>
+<div id="verbs"></div>
+
+<div class="bub" id="bub"></div>
+<svg id="sc" class="pos tennis" viewBox="0 0 320 190" role="img" aria-label="A cartoon scene that matches the sentence">
+<line x1="10" y1="184" x2="310" y2="184" stroke="#6BBF73" stroke-width="5" stroke-linecap="round"/>
+<g id="obj"></g>
+<g id="chars"></g><g id="front"></g><g><rect x="10" y="8" width="78" height="28" rx="14" fill="#E25555" stroke="#1F2A44" stroke-width="2.5"/><circle class="nd" cx="28" cy="22" r="5.5" fill="#fff"/><text x="60" y="29" text-anchor="middle" style="font-family:Caveat,cursive;font-size:21px;font-weight:700;fill:#fff">NOW</text></g>
+<text class="qm" x="120" y="40" style="font-family:Caveat,cursive;font-size:56px;font-weight:700;fill:#4A7BD9">?</text>
+<text class="qm" x="170" y="30" style="font-family:Caveat,cursive;font-size:40px;font-weight:700;fill:#F59E0B;animation-delay:.4s">?</text>
+</svg>
+<div class="cap" id="cap"></div>
+<div class="note" id="note"></div>
+
+<div class="rowr"><span class="rib" style="background:#E25555">Quiz time!</span></div>
+<div class="qz" id="qz"></div>
+</div>
+<script>
+var subs=['I','You','We','They','He','She','It'];
+var verbs=[{k:'tennis',b:'play',st:'play',e:'ing',o:'tennis',h:'play + ing = playing'},{k:'tv',b:'watch',st:'watch',e:'ing',o:'TV',h:'watch + ing = watching'},{k:'run',b:'run',st:'run',e:'ning',o:'in the park',h:'run \u2192 running (double the n)'},{k:'swim',b:'swim',st:'swim',e:'ming',o:'in the pool',h:'swim \u2192 swimming (double the m)'},{k:'write',b:'write',st:'writ',e:'ing',o:'on the board',h:'write \u2192 writing (drop the e)'},{k:'read',b:'read',st:'read',e:'ing',o:'a book',h:'read + ing = reading'}];
+var modes=[{k:'pos',l:'Positive',c:'#4CAF6A'},{k:'neg',l:'Negative',c:'#E25555'},{k:'q',l:'Question',c:'#4A7BD9'}];
+var S='She',M='pos',V=0;
+var ol='#1F2A44',skin='#FFD9B3';
+function X(x1,y1,x2,y2){return '<g class="x"><line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="#E25555" stroke-width="8" stroke-linecap="round"/><line x1="'+x2+'" y1="'+y1+'" x2="'+x1+'" y2="'+y2+'" stroke="#E25555" stroke-width="8" stroke-linecap="round"/></g>';}
+var scenes={
+tennis:'<g><line x1="214" y1="184" x2="214" y2="118" stroke="#8B8B8B" stroke-width="5" stroke-linecap="round"/><line x1="302" y1="184" x2="302" y2="118" stroke="#8B8B8B" stroke-width="5" stroke-linecap="round"/><rect x="214" y="122" width="88" height="34" fill="#fff" fill-opacity=".55" stroke="'+ol+'" stroke-width="2"/><path d="M214 130H302M214 138H302M214 146H302M230 122V156M246 122V156M262 122V156M278 122V156M294 122V156" stroke="'+ol+'" stroke-width="1" opacity=".5"/><line x1="214" y1="122" x2="302" y2="122" stroke="#fff" stroke-width="4"/><g transform="translate(258,168)"><ellipse cx="0" cy="12" rx="11" ry="3" fill="#000" opacity=".12"/><g class="ball"><circle r="12" fill="#D9EF5A" stroke="#7E9400" stroke-width="2.5"/><path d="M-11 -5q9 7 0 13M11 -5q-9 7 0 13" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></g></g>'+X(228,100,290,170)+'</g>',
+school:'<g><line x1="260" y1="50" x2="260" y2="22" stroke="'+ol+'" stroke-width="3"/><polygon class="flag" points="260,22 286,30 260,38" fill="#E25555" stroke="'+ol+'" stroke-width="2"/><polygon points="200,90 260,48 320,90" fill="#8E3B2E" stroke="'+ol+'" stroke-width="3" stroke-linejoin="round"/><rect x="210" y="88" width="100" height="96" fill="#F0856B" stroke="'+ol+'" stroke-width="3"/><rect x="230" y="88" width="60" height="18" fill="#fff" stroke="'+ol+'" stroke-width="2.5"/><text x="260" y="102" text-anchor="middle" style="font-family:Caveat,cursive;font-size:15px;font-weight:700;fill:'+ol+'">SCHOOL</text><rect x="222" y="114" width="22" height="22" fill="#BFE3FF" stroke="'+ol+'" stroke-width="2.5"/><rect x="276" y="114" width="22" height="22" fill="#BFE3FF" stroke="'+ol+'" stroke-width="2.5"/><rect x="247" y="142" width="26" height="42" rx="3" fill="#8B5A2B" stroke="'+ol+'" stroke-width="2.5"/><circle cx="268" cy="165" r="2.5" fill="#FFD54F"/>'+X(214,66,306,178)+'</g>',
+english:'<g><line x1="224" y1="124" x2="224" y2="184" stroke="#8B5A2B" stroke-width="6" stroke-linecap="round"/><line x1="292" y1="124" x2="292" y2="184" stroke="#8B5A2B" stroke-width="6" stroke-linecap="round"/><rect x="204" y="38" width="108" height="86" rx="6" fill="#8B5A2B" stroke="'+ol+'" stroke-width="3"/><rect x="211" y="45" width="94" height="72" fill="#2F6B4F"/><text x="258" y="82" text-anchor="middle" style="font-family:Caveat,cursive;font-size:34px;font-weight:700;fill:#fff">ABC</text><text x="258" y="106" text-anchor="middle" style="font-family:Caveat,cursive;font-size:20px;font-weight:700;fill:#FFE58A">English</text><rect x="244" y="174" width="40" height="10" fill="#E25555" stroke="'+ol+'" stroke-width="2"/><rect x="248" y="164" width="34" height="10" fill="#4A90D9" stroke="'+ol+'" stroke-width="2"/><rect x="252" y="154" width="28" height="10" fill="#4CAF6A" stroke="'+ol+'" stroke-width="2"/>'+X(210,44,306,122)+'</g>',
+tv:'<g><path d="M262 66L244 38M262 66L282 38" stroke="'+ol+'" stroke-width="3" stroke-linecap="round"/><circle cx="244" cy="38" r="3.5" fill="#E25555"/><circle cx="282" cy="38" r="3.5" fill="#E25555"/><rect x="214" y="150" width="92" height="34" rx="4" fill="#8B5A2B" stroke="'+ol+'" stroke-width="3"/><rect x="208" y="64" width="104" height="86" rx="12" fill="#3A3F4B" stroke="'+ol+'" stroke-width="3"/><rect x="218" y="74" width="84" height="66" rx="7" fill="#BFE3FF"/><g class="scr"><rect class="cy" x="218" y="74" width="21" height="66" fill="#FF6B6B" opacity=".55"/><rect class="cy" x="239" y="74" width="21" height="66" fill="#FFD54F" opacity=".55" style="animation-delay:-.5s"/><rect class="cy" x="260" y="74" width="21" height="66" fill="#4ECDC4" opacity=".55" style="animation-delay:-1s"/><rect class="cy" x="281" y="74" width="21" height="66" fill="#A78BFA" opacity=".55" style="animation-delay:-1.5s"/><circle class="tvb" cx="260" cy="120" r="11" fill="#FFD54F" stroke="'+ol+'" stroke-width="2.5"/></g><rect class="off" x="218" y="74" width="84" height="66" rx="7" fill="#20232B"/>'+X(214,70,306,146)+'</g>'
+};
+var itemsFor={tennis:'racket',tv:'remote',run:'',swim:'ring',write:'chalk',read:'book'};
+var fronts={};
+var bkc=['#E25555','#4A90D9','#4CAF6A','#F59E0B','#A78BFA','#4ECDC4'];
+function row(y0,off){var h='';for(var i=0;i<7;i++){var ht=16+((i*7+off)%13);h+='<rect x="'+(216+i*12.5)+'" y="'+(y0-ht)+'" width="11" height="'+ht+'" rx="1.5" fill="'+bkc[(i+off)%6]+'" stroke="'+ol+'" stroke-width="1.8"/>';}return h;}
+var wp='M-40 156';for(var wi=0;wi<10;wi++){wp+='q10 -8 20 0t20 0';}wp+='L360 190L-40 190Z';
+scenes.run='<g><g class="cld"><ellipse cx="190" cy="46" rx="22" ry="10" fill="#fff" stroke="'+ol+'" stroke-width="2.5"/><ellipse cx="206" cy="40" rx="14" ry="9" fill="#fff" stroke="'+ol+'" stroke-width="2.5"/><ellipse cx="190" cy="46" rx="20" ry="8" fill="#fff"/></g><g class="spn"><g stroke="#F59E0B" stroke-width="3" stroke-linecap="round"><line x1="288" y1="20" x2="288" y2="13"/><line x1="302.1" y1="25.9" x2="307.1" y2="20.9"/><line x1="308" y1="40" x2="315" y2="40"/><line x1="302.1" y1="54.1" x2="307.1" y2="59.1"/><line x1="288" y1="60" x2="288" y2="67"/><line x1="273.9" y1="54.1" x2="268.9" y2="59.1"/><line x1="268" y1="40" x2="261" y2="40"/><line x1="273.9" y1="25.9" x2="268.9" y2="20.9"/></g></g><circle cx="288" cy="40" r="15" fill="#FFD54F" stroke="#F59E0B" stroke-width="3"/><rect x="228" y="112" width="14" height="72" fill="#8B5A2B" stroke="'+ol+'" stroke-width="3"/><circle cx="212" cy="108" r="20" fill="#4CAF6A" stroke="'+ol+'" stroke-width="3"/><circle cx="258" cy="108" r="22" fill="#4CAF6A" stroke="'+ol+'" stroke-width="3"/><circle cx="235" cy="90" r="28" fill="#5CBF6A" stroke="'+ol+'" stroke-width="3"/><circle cx="300" cy="174" r="14" fill="#6BBF73" stroke="'+ol+'" stroke-width="3"/>'+X(206,64,266,178)+'</g>';
+scenes.swim='<g><rect x="8" y="150" width="304" height="34" fill="#3FA7D6"/><rect x="286" y="128" width="8" height="24" fill="#999" stroke="'+ol+'" stroke-width="2"/><rect x="250" y="120" width="58" height="8" rx="3" fill="#E25555" stroke="'+ol+'" stroke-width="2.5"/><path d="M232 112V156M244 112V156M232 124H244M232 138H244" stroke="#888" stroke-width="4" stroke-linecap="round" fill="none"/>'+X(236,100,312,160)+'</g>';
+fronts.swim='<g class="wv"><path d="'+wp+'" fill="#5BC0EB" fill-opacity=".6"/></g>';
+scenes.write='<g><line x1="224" y1="124" x2="224" y2="184" stroke="#8B5A2B" stroke-width="6" stroke-linecap="round"/><line x1="292" y1="124" x2="292" y2="184" stroke="#8B5A2B" stroke-width="6" stroke-linecap="round"/><rect x="204" y="38" width="108" height="86" rx="6" fill="#8B5A2B" stroke="'+ol+'" stroke-width="3"/><rect x="211" y="45" width="94" height="72" fill="#2F6B4F"/><text x="258" y="92" text-anchor="middle" style="font-family:Caveat,cursive;font-size:34px;font-weight:700;fill:#fff">Hello!</text><rect class="cover" x="211" y="45" width="94" height="72" fill="#2F6B4F"/><rect x="216" y="116" width="84" height="5" fill="#D9C7A3" stroke="'+ol+'" stroke-width="1.5"/>'+X(210,44,306,122)+'</g>';
+scenes.read='<g><rect x="208" y="40" width="104" height="144" rx="4" fill="#8B5A2B" stroke="'+ol+'" stroke-width="3"/><rect x="214" y="46" width="92" height="132" fill="#6B4423"/>'+row(88,0)+row(132,3)+row(176,5)+'<line x1="214" y1="88" x2="306" y2="88" stroke="'+ol+'" stroke-width="3"/><line x1="214" y1="132" x2="306" y2="132" stroke="'+ol+'" stroke-width="3"/>'+X(212,44,308,176)+'</g>';
+function face(cy,cat){
+return '<g transform="translate(0,'+cy+')"><g class="eyes"><circle cx="-9" cy="-2" r="3.6" fill="#1F2A44"/><circle cx="9" cy="-2" r="3.6" fill="#1F2A44"/></g><circle cx="-16" cy="6" r="5" fill="#FF8FA3" opacity=".5"/><circle cx="16" cy="6" r="5" fill="#FF8FA3" opacity=".5"/><path class="m-n" d="M-15 -11L-4 -7M15 -11L4 -7" stroke="#1F2A44" stroke-width="3" stroke-linecap="round" fill="none"/><path class="m-q" d="M-14 -12Q-9 -17 -4 -12M4 -12Q9 -17 14 -12" stroke="#1F2A44" stroke-width="3" stroke-linecap="round" fill="none"/><path class="m-s" d="M-9 8Q0 18 9 8" stroke="#1F2A44" stroke-width="3" stroke-linecap="round" fill="none"/><path class="m-n" d="M-8 13Q0 5 8 13" stroke="#1F2A44" stroke-width="3" stroke-linecap="round" fill="none"/><ellipse class="m-q" cx="0" cy="11" rx="4" ry="5" fill="#1F2A44"/>'+(cat?'<polygon points="-3,1 3,1 0,5" fill="#FF8FA3"/><path d="M-26 3L-14 5M-26 10L-14 9M26 3L14 5M26 10L14 9" stroke="#1F2A44" stroke-width="1.5" stroke-linecap="round"/>':'')+'</g>';}
+function item(k,x,y,s){
+if(k==='racket')return '<g transform="translate('+x+','+y+') rotate(25) scale('+s+')"><g class="swr"><line x1="0" y1="0" x2="0" y2="-16" stroke="#8B5A2B" stroke-width="5" stroke-linecap="round"/><ellipse cx="0" cy="-32" rx="13" ry="17" fill="#fff" stroke="#D9534F" stroke-width="4"/><path d="M-13 -32H13M0 -49V-15" stroke="#D9534F" stroke-width="1.5"/></g></g>';
+if(k==='book')return '<g transform="translate('+x+','+y+') rotate(-8) scale('+s+')"><path d="M-15 -8Q-7 -14 0 -8Q7 -14 15 -8V8Q7 2 0 8Q-7 2 -15 8Z" fill="#fff" stroke="#1F2A44" stroke-width="2.5" stroke-linejoin="round"/><line x1="0" y1="-8" x2="0" y2="8" stroke="#1F2A44" stroke-width="2"/><path d="M-15 8Q-7 14 0 8Q7 14 15 8" fill="none" stroke="#4A90D9" stroke-width="3"/></g>';
+if(k==='remote')return '<g transform="translate('+x+','+y+') rotate(20) scale('+s+')"><rect x="-5" y="-18" width="10" height="24" rx="3" fill="#555" stroke="#1F2A44" stroke-width="2.5"/><circle cy="-11" r="2.5" fill="#E25555"/><circle cy="-4" r="2.5" fill="#4ECDC4"/></g>';
+if(k==='chalk')return '<g transform="translate('+x+','+y+') rotate(40) scale('+s+')"><g class="jig"><rect x="-2.5" y="-18" width="5" height="18" rx="2" fill="#fff" stroke="#1F2A44" stroke-width="2"/></g></g>';
+return '';}
+function ring(k,cat){if(k!=='ring')return '';var cy=cat?-40:-34,rx=cat?27:29;return '<ellipse cx="0" cy="'+cy+'" rx="'+rx+'" ry="9" fill="none" stroke="#FF6B6B" stroke-width="8"/><ellipse cx="0" cy="'+cy+'" rx="'+rx+'" ry="9" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="8 14"/>';}
+function arms(k){
+return '<path d="M20 -68L42 -52" stroke="#1F2A44" stroke-width="12" stroke-linecap="round"/><path d="M20 -68L42 -52" stroke="'+skin+'" stroke-width="6" stroke-linecap="round"/><path d="M-20 -68L-34 -44" stroke="#1F2A44" stroke-width="12" stroke-linecap="round"/><path d="M-20 -68L-34 -44" stroke="'+skin+'" stroke-width="6" stroke-linecap="round"/>'+item(k,42,-52,1);}
+function bag(k){return k==='bag'?'<rect x="-31" y="-78" width="20" height="38" rx="7" fill="#F59E0B" stroke="'+ol+'" stroke-width="3"/>':'';}
+function strap(k){return k==='bag'?'<path d="M-10 -78L-6 -50" stroke="#D98200" stroke-width="4" stroke-linecap="round"/>':'';}
+function boy(k){
+return bag(k)+'<g class="legL"><rect x="-16" y="-36" width="12" height="36" rx="5" fill="#2D3A6B" stroke="'+ol+'" stroke-width="3"/><ellipse cx="-10" cy="0" rx="10" ry="4" fill="#fff" stroke="'+ol+'" stroke-width="3"/></g><g class="legR"><rect x="4" y="-36" width="12" height="36" rx="5" fill="#2D3A6B" stroke="'+ol+'" stroke-width="3"/><ellipse cx="10" cy="0" rx="10" ry="4" fill="#fff" stroke="'+ol+'" stroke-width="3"/></g><rect x="-22" y="-80" width="44" height="48" rx="14" fill="#4A90D9" stroke="'+ol+'" stroke-width="3"/>'+strap(k)+ring(k,false)+arms(k)+'<circle cx="0" cy="-104" r="26" fill="'+skin+'" stroke="'+ol+'" stroke-width="3"/><path d="M-26 -106Q-28 -134 0 -132Q28 -134 26 -106Q10 -118 -4 -114Q-16 -116 -26 -106Z" fill="#5B3A1E" stroke="'+ol+'" stroke-width="3"/>'+face(-102,false);}
+function girl(k){
+return '<circle cx="-31" cy="-98" r="10" fill="#2B1B12" stroke="'+ol+'" stroke-width="3"/><circle cx="31" cy="-98" r="10" fill="#2B1B12" stroke="'+ol+'" stroke-width="3"/>'+bag(k)+'<g class="legL"><rect x="-13" y="-34" width="8" height="34" rx="4" fill="'+skin+'" stroke="'+ol+'" stroke-width="3"/><ellipse cx="-9" cy="0" rx="10" ry="4" fill="#F06292" stroke="'+ol+'" stroke-width="3"/></g><g class="legR"><rect x="5" y="-34" width="8" height="34" rx="4" fill="'+skin+'" stroke="'+ol+'" stroke-width="3"/><ellipse cx="9" cy="0" rx="10" ry="4" fill="#F06292" stroke="'+ol+'" stroke-width="3"/></g><path d="M-18 -80L18 -80L30 -30L-30 -30Z" fill="#F06292" stroke="'+ol+'" stroke-width="3" stroke-linejoin="round"/>'+strap(k)+ring(k,false)+arms(k)+'<circle cx="0" cy="-104" r="26" fill="'+skin+'" stroke="'+ol+'" stroke-width="3"/><path d="M-26 -106Q-28 -134 0 -132Q28 -134 26 -106Q8 -114 0 -120Q-14 -112 -26 -106Z" fill="#2B1B12" stroke="'+ol+'" stroke-width="3"/><circle cx="18" cy="-128" r="6" fill="#FFD54F" stroke="'+ol+'" stroke-width="2.5"/>'+face(-102,false);}
+function cat(k){
+return (k==='bag'?'<rect x="-33" y="-54" width="16" height="28" rx="5" fill="#F59E0B" stroke="'+ol+'" stroke-width="3"/>':'')+'<path class="tail" d="M20 -14Q56 -18 46 -58" fill="none" stroke="'+ol+'" stroke-width="13" stroke-linecap="round"/><path class="tail" d="M20 -14Q56 -18 46 -58" fill="none" stroke="#F5A65B" stroke-width="7" stroke-linecap="round"/><ellipse cx="0" cy="-30" rx="24" ry="30" fill="#F5A65B" stroke="'+ol+'" stroke-width="3"/><ellipse cx="-10" cy="-2" rx="11" ry="5" fill="#FFF3E0" stroke="'+ol+'" stroke-width="3"/><ellipse cx="10" cy="-2" rx="11" ry="5" fill="#FFF3E0" stroke="'+ol+'" stroke-width="3"/><polygon points="-24,-90 -22,-118 -4,-98" fill="#F5A65B" stroke="'+ol+'" stroke-width="3" stroke-linejoin="round"/><polygon points="24,-90 22,-118 4,-98" fill="#F5A65B" stroke="'+ol+'" stroke-width="3" stroke-linejoin="round"/><polygon points="-19,-96 -18,-110 -9,-99" fill="#FF8FA3"/><polygon points="19,-96 18,-110 9,-99" fill="#FF8FA3"/><circle cx="0" cy="-78" r="26" fill="#F5A65B" stroke="'+ol+'" stroke-width="3"/><path d="M-6 -102L-6 -94M0 -103L0 -93M6 -102L6 -94" stroke="#C77A2B" stroke-width="3" stroke-linecap="round"/>'+ring(k,true)+face(-76,true)+item(k,26,-34,.75);}
+var who={I:['girl'],You:['boy'],He:['boy'],She:['girl'],It:['cat'],We:['girl','boy','girl'],They:['boy','girl','boy']};
+var caps={I:'I = me (one person)',You:'You = one person',He:'He = one boy',She:'She = one girl',It:'It = one animal or thing',We:'We = me and other people (a group)',They:'They = other people (a group)'};
+function renderChars(k){
+var arr=who[S],n=arr.length,sc=n>1?0.78:1,xs=n>1?[52,108,164]:[105],h='',it=itemsFor[k];
+arr.forEach(function(tp,i){var f=tp==='boy'?boy:tp==='girl'?girl:cat;h+='<g transform="translate('+xs[i]+',182) scale('+sc+')"><g class="ch bob" style="animation-delay:'+(i*0.3)+'s">'+f(it)+'</g></g>';});
+var c=document.getElementById('chars');c.innerHTML=h;
+var els=c.querySelectorAll('.ch');
+for(var i=0;i<els.length;i++){(function(el){el.onclick=function(){el.classList.add('jump');setTimeout(function(){el.classList.remove('jump');},650);};})(els[i]);}
+}
+function third(){return S==='He'||S==='She'||S==='It';}
+function build(){
+var v=verbs[V],t=third(),lo=S==='I'?'I':S.toLowerCase(),be=S==='I'?'am':t?'is':'are',Be=S==='I'?'Am':t?'Is':'Are',bn=S==='I'?'am not':t?"isn't":"aren't",ing=v.st+'<b>'+v.e+'</b>',h,n;
+if(M==='pos'){h=S+' <b>'+be+'</b> '+ing+' '+v.o+'.';n='With '+S+', use <b>'+be+'</b> + verb-ing';}
+else if(M==='neg'){h=S+' <b>'+bn+'</b> '+ing+' '+v.o+'.';n='Use <b>'+bn+'</b> + verb-ing';}
+else{h='<b>'+Be+'</b> '+lo+' '+ing+' '+v.o+'?';n='Start with <b>'+Be+'</b> + verb-ing';}
+n+='<br>'+v.h;
+var b=document.getElementById('bub');b.innerHTML=h;b.classList.remove('pp');void b.offsetWidth;b.classList.add('pp');
+document.getElementById('note').innerHTML=n;
+document.getElementById('cap').textContent=caps[S];
+var sc=document.getElementById('sc');sc.setAttribute('class',M+' '+v.k);
+document.getElementById('obj').innerHTML=scenes[v.k];
+document.getElementById('front').innerHTML=fronts[v.k]||'';
+renderChars(v.k);
+var cs=document.querySelectorAll('#subs .chip');for(var i=0;i<cs.length;i++){cs[i].classList.toggle('on',subs[i]===S);}
+var ms=document.querySelectorAll('#modes .mode');for(i=0;i<ms.length;i++){var on=modes[i].k===M;ms[i].style.background=on?modes[i].c:'#fff';ms[i].style.color=on?'#fff':modes[i].c;}
+var vs=document.querySelectorAll('#verbs .chip');for(i=0;i<vs.length;i++){vs[i].classList.toggle('on',i===V);}
+}
+subs.forEach(function(s){var e=document.createElement('button');e.className='chip';e.textContent=s;e.onclick=function(){S=s;build();};document.getElementById('subs').appendChild(e);});
+modes.forEach(function(m){var e=document.createElement('button');e.className='mode';e.style.borderColor=m.c;e.textContent=m.l;e.onclick=function(){M=m.k;build();};document.getElementById('modes').appendChild(e);});
+verbs.forEach(function(v,i){var e=document.createElement('button');e.className='chip';e.textContent=v.b;e.onclick=function(){V=i;build();};document.getElementById('verbs').appendChild(e);});
+build();
+var qs=[
+{q:'She ___ tennis now.',o:['plays','is playing','playing'],a:1,t:'Right now: is + verb-ing'},
+{q:'I ___ a book.',o:['am reading','is reading','reading'],a:0,t:'With I, use am'},
+{q:'They ___ TV.',o:['is watching','are watching','watch'],a:1,t:'With they, use are'},
+{q:'He ___ his lunch.',o:['are eating','eating','is eating'],a:2,t:'With he, use is'},
+{q:'We ___ in the park.',o:['are running','is running','am running'],a:0,t:'run \u2192 running: double the n'},
+{q:'The cat ___ on the sofa.',o:['is sleeping','sleeps','are sleeping'],a:0,t:'With the cat (it), use is'},
+{q:'You ___ a picture.',o:['am drawing','are drawing','is drawing'],a:1,t:'With you, use are'},
+{q:'___ she dancing?',o:['Is','Are','Am'],a:0,t:'With she, start with Is'},
+{q:'___ they swimming?',o:['Is','Am','Are'],a:2,t:'With they, start with Are'},
+{q:'___ you listening?',o:['Are','Is','Do'],a:0,t:'With you, start with Are'},
+{q:'I ___ playing tennis.',o:["isn't","am not","aren't"],a:1,t:'With I, use am not'},
+{q:'He ___ sleeping.',o:["am not","aren't","isn't"],a:2,t:'With he, use isn\u2019t'},
+{q:'They ___ writing.',o:["isn't","aren't","am not"],a:1,t:'With they, use aren\u2019t'},
+{q:'Look! The baby ___.',o:['is crying','cries','are crying'],a:0,t:'Look! means it is happening now'},
+{q:'Listen! Birds ___.',o:['are singing','is singing','sing'],a:0,t:'With birds (they), use are'},
+{q:'She is ___ a letter.',o:['write','writing','writeing'],a:1,t:'write \u2192 writing: drop the e, add ing'},
+{q:'He is ___ in the pool.',o:['swiming','swim','swimming'],a:2,t:'swim \u2192 swimming: double the m'},
+{q:'We are ___ to music.',o:['listen','listenning','listening'],a:2,t:'listen + ing = listening'},
+{q:'I am ___ my homework.',o:['doing','do','does'],a:0,t:'am + verb-ing: doing'},
+{q:'The boys are ___ football.',o:['plays','play','playing'],a:2,t:'are + verb-ing: playing'},
+{q:'What ___ you doing?',o:['is','are','am'],a:1,t:'With you, use are'},
+{q:'Mom ___ cooking dinner now.',o:['are','am','is'],a:2,t:'With mom (she), use is'},
+{q:'The sun ___ shining today.',o:['is','are','am'],a:0,t:'With the sun (it), use is'},
+{q:'My sister ___ not sleeping.',o:['is','am','are'],a:0,t:'With my sister (she), use is'},
+{q:'She is dancing ___.',o:['every day','now','yesterday'],a:1,t:'Now means at this moment'}
+];
+var qi=0,sco=0,res=[];
+var qz=document.getElementById('qz');
+function faceSvg(ok){return '<svg width="46" height="46" viewBox="-28 -28 56 56" style="flex:none"><circle r="25" fill="'+(ok?'#FFE58A':'#D6E4F5')+'" stroke="#1F2A44" stroke-width="3"/><circle cx="-9" cy="-5" r="3.5" fill="#1F2A44"/><circle cx="9" cy="-5" r="3.5" fill="#1F2A44"/>'+(ok?'<path d="M-11 6Q0 19 11 6" stroke="#1F2A44" stroke-width="3" fill="none" stroke-linecap="round"/>':'<path d="M-9 14Q0 5 9 14" stroke="#1F2A44" stroke-width="3" fill="none" stroke-linecap="round"/>')+'</svg>';}
+function dots(){var done=qi+(res[qi]!==undefined?1:0),pct=Math.round(done/qs.length*100);return '<div style="display:flex;justify-content:space-between;font-size:21px;font-weight:700;line-height:28px"><span>Question '+(qi+1)+' / '+qs.length+'</span><span>Score: '+sco+'</span></div><div style="height:12px;border:2.5px solid #1F2A44;border-radius:8px;background:#fff;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:#4CAF6A;transition:width .4s"></div></div>';}
+function showQ(){
+var q=qs[qi];
+var h=dots()+'<div class="qt" dir="ltr">'+q.q.replace('___','<span class="bl" id="bl">&nbsp;</span>')+'</div>';
+q.o.forEach(function(o,i){h+='<button class="opt" data-i="'+i+'">'+o+'</button>';});
+h+='<div id="fb"></div>';
+qz.innerHTML=h;
+var bs=qz.querySelectorAll('.opt');
+for(var i=0;i<bs.length;i++){bs[i].onclick=pick;}
+}
+function pick(ev){
+var q=qs[qi],i=parseInt(ev.currentTarget.getAttribute('data-i'),10),ok=i===q.a;
+var bs=qz.querySelectorAll('.opt');
+for(var k=0;k<bs.length;k++){bs[k].disabled=true;if(k===q.a)bs[k].classList.add('ok');}
+if(!ok)ev.currentTarget.classList.add('bad');
+document.getElementById('bl').textContent=q.o[q.a];
+res[qi]=ok?1:0;if(ok)sco++;
+var last=qi===qs.length-1;
+document.getElementById('fb').innerHTML=faceSvg(ok)+'<div><b>'+(ok?'Correct! Well done!':'Not quite. Keep going!')+'</b><br>'+q.t+'</div>';
+var nb=document.createElement('button');nb.className='nx';nb.textContent=last?'Results':'Next';
+nb.onclick=function(){if(last){showEnd();}else{qi++;showQ();}};
+qz.appendChild(nb);
+}
+function showEnd(){
+var h=dots()+'<div style="text-align:center"><div style="display:flex;justify-content:center;gap:6px;margin:8px 0">';
+var st=Math.round(sco/qs.length*5);for(var i=0;i<5;i++){h+='<svg width="40" height="40" viewBox="0 0 30 30" style="animation:star .5s both;animation-delay:'+(i*.15)+'s"><polygon points="15,2 19,11 28,12 21,18 23,27 15,22 7,27 9,18 2,12 11,11" fill="'+(i<st?'#FFD54F':'#E3E3E3')+'" stroke="'+(i<st?'#F59E0B':'#BDBDBD')+'" stroke-width="1.5"/></svg>';}
+var msg=sco===qs.length?'Excellent! You have mastered the Present Continuous!':sco>=Math.ceil(qs.length*0.6)?'Great job! Review the questions you missed.':'Good try! Play with the buttons above, then take the quiz again.';
+h+='</div><div style="font-size:24px;line-height:34px;font-weight:700">'+sco+' / '+qs.length+'</div><div style="font-size:20px;line-height:30px">'+msg+'</div></div><button class="nx" id="rs">Try again</button>';
+qz.innerHTML=h;
+document.getElementById('rs').onclick=function(){qi=0;sco=0;res=[];showQ();};
+}
+showQ();
+</script>
+</body>
+</html>
